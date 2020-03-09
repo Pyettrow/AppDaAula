@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         btConverter.setOnClickListener(trataEvento);
 
         Log.d("Log1", "onCreate");
+
     }
 
     View.OnClickListener trataEvento = new View.OnClickListener() {
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             if(etTempCelsius.getText().length() != 0){
                 Intent intent = new Intent(MainActivity.this, MainActivityConversao.class);
                 intent.putExtra("Celsius", String.valueOf(etTempCelsius.getText()));
+                etTempCelsius.setText("");
                 startActivity(intent);
             }else{
                 Toast.makeText(MainActivity.this, "Informe uma temperatura para converter!", Toast.LENGTH_SHORT).show();
